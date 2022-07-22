@@ -1,4 +1,5 @@
-const _cooper = PlotTheme(Dict([linewidth = 4,
+const _cooper = PlotTheme(Dict([
+                             :linewidth = 4,
                              :markersize = 10,
                              :fontfamily = "sans-serif",
                              :titlefontsize = 24,
