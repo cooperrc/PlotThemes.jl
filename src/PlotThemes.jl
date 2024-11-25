@@ -2,7 +2,7 @@ module PlotThemes
 
 using PlotUtils
 
-export add_theme, theme_palette
+export add_theme, theme_palette, PlotTheme
 
 _255_to_1(c::Symbol, colors) = RGBA(map(x-> x/255,colors[c])...)
 RGB255(r,g,b) = RGB(r/255, g/255, b/255)
@@ -43,11 +43,13 @@ include("sand.jl")
 include("lime.jl")
 include("orange.jl")
 include("wong.jl")
+include("boxed.jl")
 include("juno.jl")
 include("gruvbox.jl")
 include("sheet.jl")
 include("dao.jl")
 include("dracula.jl")
+include("rose_pine.jl")
 
 
 const _themes = Dict{Symbol, PlotTheme}([
@@ -65,10 +67,14 @@ const _themes = Dict{Symbol, PlotTheme}([
     :mute => _mute,
     :wong => _wong,
     :wong2 => _wong2,
+    :boxed => _boxed,
     :juno => _juno,
     :lime => _lime,
     :orange => _orange,
-    :dracula => _dracula
+    :dracula => _dracula,
+    :rose_pine => _rose_pine,
+    :rose_pine_dawn => _rose_pine_dawn
+
 ])
 
 

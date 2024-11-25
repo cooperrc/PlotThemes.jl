@@ -1,3 +1,7 @@
+# WARNING
+
+https://github.com/JuliaPlots/PlotThemes.jl is now integrated into https://github.com/JuliaPlots/Plots.jl for Plots v2, please make corresponding PRs there.
+
 # PlotThemes
 
 [![Build Status](https://travis-ci.org/JuliaPlots/PlotThemes.jl.svg?branch=master)](https://travis-ci.org/JuliaPlots/PlotThemes.jl)
@@ -24,6 +28,7 @@ Currently the following themes are available:
 - `:solarized_light`
 - `:wong`
 - `:wong2`
+- `:boxed`
 - `:gruvbox_dark`
 - `:gruvbox_light`
 - `:bright`
@@ -31,6 +36,8 @@ Currently the following themes are available:
 - `:mute`
 - `:dao`
 - `:dracula`
+- `:rose_pine`
+- `:rose_pine_dawn`
 
 
 When using Plots, a theme can be set using the `theme` function:
@@ -75,6 +82,9 @@ Themes can be previewed using `Plots.showtheme(thm::Symbol)`:
 ### `:wong2`
 ![theme_wong2](https://user-images.githubusercontent.com/16589944/70847880-eaecac80-1e69-11ea-9b59-cdf937427121.png)
 
+### `:boxed`
+![theme_boxed](https://github.com/user-attachments/assets/ed1baaf1-4679-4d9a-9667-3118dc42200e)
+
 ### `:gruvbox_dark`
 ![theme_gruvbox_dark](https://user-images.githubusercontent.com/16589944/70847882-f049f700-1e69-11ea-94f8-255f2cd17288.png)
 
@@ -96,6 +106,12 @@ Themes can be previewed using `Plots.showtheme(thm::Symbol)`:
 ### `:dracula`
 ![theme_dracula](https://user-images.githubusercontent.com/64332767/136754217-31d4348a-c873-4496-8b66-905e4d8a7e36.png)
 
+### `:rose_pine`
+![theme_rose_pine](https://github.com/BaerLKR/PlotThemes.jl/assets/83340886/30c869e5-2b90-405a-bc49-cf4ef3c43d75)
+
+### `:rose_pine_dawn`
+![theme_rose_pine_dawn](https://github.com/BaerLKR/PlotThemes.jl/assets/83340886/e30c0b46-1be3-49f5-afc5-ceede0b0c27d)
+
 ## Contributing
 A theme specifies default values for different Plots [attributes](https://docs.juliaplots.org/stable/attributes/).
 At the moment these are typically colors, palettes and colorgradients, but any Plots attribute can be controlled by a theme in general.
@@ -104,3 +120,10 @@ PRs for new themes very welcome! Adding a new theme (e.g. `mytheme`) is as easy 
 _themes[:mytheme] = PlotTheme(; kwargs...)
 ```
 The keyword arguments can be any collection of Plots attributes plus a colorgradient keyword argument.
+For adding the `showtheme` figure to `README.md`, use 
+```julia
+Plots.showtheme(:your_theme)
+plot!(dpi=400)
+savefig("your_theme.png")
+```
+The image can be uploaded to the `README.md` file by pulling it in with the file-editing web interface.
